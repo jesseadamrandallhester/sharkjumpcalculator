@@ -1,0 +1,14 @@
+.show_poster {
+  float: left;
+}
+.show_poster img {
+  display: block;
+  margin-right: 10px;
+}
+.about
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+

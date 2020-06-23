@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<link href="{{ url_for('static', filename='sharkjump.css') }}" type="text/css" rel="stylesheet" />
+<div>
+  {% if poster_url %}
+  <div class="show_poster">
+    <img src="{{ poster_url }}"></img>
+  </div>
+  {% endif %}
+  {% if eras %}
+  <div>
+  {% for era in eras %}
+  <p>From season {{ era["first episode"].season }}, episode {{ era["first episode"].number }}
+     ("{{ era["first episode"].title }}") to season {{ era["last episode"].season }}, episode
+     {{ era["last episode"].number }} ("{{ era["last episode"].title }}"), the average episode 
+     rating was {{ era["average rating"] }}.
+  </p>
+  {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

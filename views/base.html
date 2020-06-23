@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link href="{{ url_for('static', filename='sharkjump.css') }}" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div style="overflow:hidden;width:100%">
+      <span style = "float:left">
+        <form action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          {{ form.show_name.label }}
+          {{ form.show_name(size=32) }}
+          {{ form.submit() }}
+        </form>
+      </span>
+      <span style="float:right">
+        <a href="{{ url_for('static', filename='about.html') }}" target='_blank'>
+          About
+        </a> 
+        &nbsp &nbsp
+        <a href="{{ url_for('static', filename='about_the_author.html') }}" target='_blank'>
+          About the Author
+        </a>
+      </span>
+    </div>
+    {% block content %}{% endblock %}
+  </body>
+</html>
